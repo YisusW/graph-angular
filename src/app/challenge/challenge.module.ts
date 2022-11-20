@@ -6,7 +6,7 @@ import { ChartModule } from 'primeng/chart';
 import { ApolloModule, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
-import { RepositoryComponent } from './repository/repository.component';
+import { RepositoryComponent } from './components/repository/repository.component';
 import { URI_API_GITHUB_GRAPHQL } from './graphql.module';
 
 @NgModule({
@@ -20,8 +20,7 @@ import { URI_API_GITHUB_GRAPHQL } from './graphql.module';
           cache: new InMemoryCache(),
           link: httpLink.create({
             uri: URI_API_GITHUB_GRAPHQL,
-            withCredentials: true,
-            headers: new HttpHeaders({ Authorization: 'Bearer <token>' }),
+            headers: new HttpHeaders({ Authorization: `Bearer <toekn>` })
           }),
         };
       },
