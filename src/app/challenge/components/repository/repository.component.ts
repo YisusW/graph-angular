@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Apollo } from 'apollo-angular';
-import { DEFAULT_QUERY } from './repository.queries';
+import { GithubService, Repository } from '../../services/github.service';
 
 @Component({
   selector: 'app-repository',
@@ -8,13 +8,12 @@ import { DEFAULT_QUERY } from './repository.queries';
   styleUrls: ['./repository.component.scss'],
 })
 export class RepositoryComponent implements OnInit {
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo,
+    private gitHubService :GithubService) {}
 
   ngOnInit(): void {
-    this.apollo
-      .watchQuery({ query: DEFAULT_QUERY })
-      .valueChanges.subscribe((repositories: any) => {
-        console.log(repositories);
-      });
+    this.gitHubService.getTopRepositories().subscribe((repos: Repository[]) => {
+      console.log(repos);
+    });
   }
 }
