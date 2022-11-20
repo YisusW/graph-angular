@@ -19,7 +19,7 @@ import { URI_API_GITHUB_GRAPHQL } from './graphql.module';
           cache: new InMemoryCache(),
           link: httpLink.create({
             uri: URI_API_GITHUB_GRAPHQL,
-            headers: new HttpHeaders({ Authorization: `Bearer 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` })
+            headers: new HttpHeaders({ Authorization: `Bearer <toekn>` })
           }),
         };
       },
