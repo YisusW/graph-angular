@@ -5,25 +5,22 @@ import { DEFAULT_QUERY } from './repository.queries';
 
 export interface Repository {
   name: string;
-  stargazerCount: number
+  stargazerCount: number;
   url: string;
-  description: string
+  description: string;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GithubService {
-
   constructor(private apollo: Apollo) {}
 
-  public getTopRepositories(): Observable<Repository[]> { 
-    
+  public getTopRepositories(): Observable<Repository[]> {
     return this.apollo
-    .watchQuery({ query: DEFAULT_QUERY })
-    .valueChanges.pipe(
-      map((collection: any) => collection.data.search.nodes)
-    );
+      .watchQuery({ query: DEFAULT_QUERY })
+      .valueChanges.pipe(
+        map((collection: any) => collection.data.search.nodes)
+      );
   }
-
 }
