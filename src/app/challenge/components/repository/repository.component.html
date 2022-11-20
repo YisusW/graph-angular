@@ -1,12 +1,6 @@
-<p>repository works!</p>
-
 <div>
   <div class="card">
-    <h5>Horizontal</h5>
-    <p-chart
-      type="bar"
-      [data]="basicData"
-      [options]="horizontalOptions"
-    ></p-chart>
+    <h5>GitHub Repos</h5>
+    <app-chart-horizontal [data]="topRepositories" ></app-chart-horizontal>
   </div>
 </div>

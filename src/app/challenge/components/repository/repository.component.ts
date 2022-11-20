@@ -7,6 +7,9 @@ import { GithubService, Repository } from '../../services/github.service';
   styleUrls: ['./repository.component.scss'],
 })
 export class RepositoryComponent implements OnInit {
+
+  topRepositories: Repository[] = [];
+
   constructor(private githubService: GithubService) {}
 
   ngOnInit(): void {
@@ -14,7 +17,8 @@ export class RepositoryComponent implements OnInit {
       .getTopRepositories().subscribe(
         (repositories: Repository[]) => {
           console.log(repositories)
+          this.topRepositories = repositories;
         }
-      );
+      )
   }
 }
