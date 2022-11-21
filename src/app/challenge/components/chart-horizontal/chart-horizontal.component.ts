@@ -40,11 +40,18 @@ export class ChartHorizontalComponent implements OnChanges {
     };
 
     this.horizontalOptions = {
-      indexAxis: 'y',
+  
       plugins: {
-          legend: {
-              labels: {
-                  color: '#495057'
+        legend: {
+            labels: {
+                color: '#495057'
+            }
+        }
+      },
+      scales: {
+          r: {
+              grid: {
+                  color: '#ebedef'
               }
           }
       }
