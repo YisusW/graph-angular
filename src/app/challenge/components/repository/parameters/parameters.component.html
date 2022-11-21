@@ -1,0 +1,27 @@
+
+<div class="p-inputgroup">
+  <div class="p-field">
+    <label for="float-input">Temática</label>
+    <br>
+    <input class="width-100" id="float-input" [(ngModel)]="topic" type="text" pInputText> 
+  </div>
+</div>
+
+<div class="p-inputgroup">
+  <div class="p-field">
+    <label for="stars-input">Número de estrellas</label>
+    <br>
+    <p-inputNumber 
+      class="width-100" 
+      [(ngModel)]="stars"
+      inputId="minmax-buttons" 
+      [min]="0"></p-inputNumber>
+  </div>
+</div>
+
+<br>
+
+<p-button 
+  label="Buscar Repositorios"
+  [disabled]="stars===0 && topic==='' || stars==null && topic===''" 
+  (onClick)="searchRepositories()"></p-button>

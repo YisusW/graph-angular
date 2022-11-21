@@ -1,0 +1,10 @@
+<div>
+  <div class="card">
+    <div class="row">
+      <app-parameters (parameters)="getTopRepositories($event)"></app-parameters>
+    </div>
+    <div>
+      <app-chart-horizontal [data]="topRepositories"></app-chart-horizontal>
+    </div>
+  </div>
+</div>
