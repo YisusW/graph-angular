@@ -9,7 +9,20 @@ Run `npm install`
  * @description add the token (tokens classic)
  * https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
-Paste the token (tokens classic) in the file => `/src/app/challenge/challenge.module.ts` line 22 where it was a constant created to use Authentication
+```typescript
+import { FormsModule } from '@angular/forms';
+
+/**
+ * @description add the token very recommended for me (tokens classic)
+ * https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+ */
+const tokenG = "ADD_TOKEN_HERE";
+
+@NgModule({
+
+```
+
+Paste the token (tokens classic) in the file => `/src/app/challenge/challenge.module.ts` line 21 where it was a constant created to use Authentication
 This step it is very required to get data from GitHub API
 ---------------------------------------------------------------------------------------------------------
 
