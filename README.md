@@ -4,6 +4,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+Run `npm install`
+
+ * @description add the token (tokens classic)
+ * https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+Paste the token (tokens classic) in the file => `/src/app/challenge/challenge.module.ts` line 22 where it was a constant created to use Authentication
+This step it is very required to get data from GitHub API
+---------------------------------------------------------------------------------------------------------
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Code scaffolding
