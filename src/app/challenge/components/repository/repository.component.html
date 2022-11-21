@@ -1,6 +1,10 @@
 <div>
   <div class="card">
-    <h5>GitHub Repos</h5>
-    <app-chart-horizontal [data]="topRepositories"></app-chart-horizontal>
+    <div class="row">
+      <app-parameters (parameters)="getTopRepositories($event)"></app-parameters>
+    </div>
+    <div>
+      <app-chart-horizontal [data]="topRepositories"></app-chart-horizontal>
+    </div>
   </div>
 </div>

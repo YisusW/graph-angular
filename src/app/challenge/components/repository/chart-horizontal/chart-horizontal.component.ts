@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
-import { Repository } from '../../services/github.service';
+import { Repository } from '../../../services/github.service';
 
 @Component({
   selector: 'app-chart-horizontal',
@@ -21,7 +21,7 @@ export class ChartHorizontalComponent implements OnChanges {
       labels: values,
       datasets: [
         {
-          label: 'Top 10',
+          label: `Top ${values.length}`,
           backgroundColor: [
             "#42A5F5",
             "#66BB6A",
@@ -40,20 +40,12 @@ export class ChartHorizontalComponent implements OnChanges {
     };
 
     this.horizontalOptions = {
-  
       plugins: {
         legend: {
-            labels: {
-                color: '#495057'
-            }
-        }
-      },
-      scales: {
-          r: {
-              grid: {
-                  color: '#ebedef'
-              }
+          labels: {
+            color: '#495057'
           }
+        }
       }
     };
   }

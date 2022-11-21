@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GithubService, Repository } from '../../services/github.service';
+import { GithubService, ParametersForm, Repository } from '../../services/github.service';
 
 @Component({
   selector: 'app-repository',
@@ -16,9 +16,25 @@ export class RepositoryComponent implements OnInit {
     this.githubService
       .getTopRepositories().subscribe(
         (repositories: Repository[]) => {
-          console.log(repositories)
           this.topRepositories = repositories;
         }
       )
+  }
+
+  getTopRepositories(parameters: ParametersForm): void {
+    if(parameters.topic !== "") {
+      this.githubService.getRepositoriesByTopic(parameters).subscribe(
+        (repositories: Repository[]) => {
+          this.topRepositories = repositories;
+        }
+      );
+    } else {
+      this.githubService
+      .getTopRepositories(parameters.stars).subscribe(
+        (repositories: Repository[]) => {
+          this.topRepositories = repositories;
+        }
+      )
+    }
   }
 }
