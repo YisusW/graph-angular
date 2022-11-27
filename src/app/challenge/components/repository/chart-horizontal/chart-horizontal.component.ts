@@ -21,7 +21,7 @@ export class ChartHorizontalComponent implements OnChanges {
       labels: values,
       datasets: [
         {
-          label: `Top ${values.length}`,
+          label: `Estrellas`,
           backgroundColor: [
             "#42A5F5",
             "#66BB6A",
