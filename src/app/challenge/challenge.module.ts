@@ -20,6 +20,10 @@ import { FormsModule } from '@angular/forms';
  */
 const tokenG = "__PASTE_TOKEN_HERE__";
 
+if (tokenG === '__PASTE_TOKEN_HERE__') {
+  console.error('HEY, please add token from github');
+}
+
 @NgModule({
   declarations: [RepositoryComponent, ChartHorizontalComponent, ParametersComponent],
   imports: [CommonModule, ApolloModule, HttpClientModule, ChartModule, FormsModule, InputNumberModule, InputTextModule, ButtonModule],
