@@ -18,11 +18,11 @@ import { FormsModule } from '@angular/forms';
  * @description add the token very recommended for me (tokens classic)
  * https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
  */
-const tokenG = "__PASTE_TOKEN_HERE__";
+const tokenG = "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";
 
-if (tokenG === '__PASTE_TOKEN_HERE__') {
-  console.error('HEY, please add token from github');
-}
+// if (tokenG === '__PASTE_TOKEN_HERE__') {
+//   console.error('HEY, please add token from github');
+// }
 
 @NgModule({
   declarations: [RepositoryComponent, ChartHorizontalComponent, ParametersComponent],
